@@ -89,12 +89,12 @@ function FuelMonitoringContent() {
     <div>
       <div className="bpl-page-header">
         <h1 className="bpl-page-title">Fuel Monitoring</h1>
-        <p className="bpl-page-subtitle">Live quarry fuel probe levels via MiX telematics</p>
+        <p className="bpl-page-subtitle">Live site fuel probe levels from connected telematics</p>
       </div>
 
       <div className="bpl-kpi-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)', marginBottom: 20 }}>
         <KPICard label="Quarry Assets" value={quarryVehicles.length} icon={Truck} color="#0078D4" sub="Fuel probe fitted" />
-        <KPICard label="Online Now" value={online} color="#16a34a" icon={Activity} sub="Reporting to MiX" />
+        <KPICard label="Online Now" value={online} color="#16a34a" icon={Activity} sub="Reporting live" />
         <KPICard label="Temp Inactive" value={quarryVehicles.length - online} color="#6B7A8D" sub="No recent signal" />
         <KPICard label="Site zones" value={3} color="#7C3AED" sub="West · North · South" />
       </div>
@@ -175,7 +175,7 @@ function FuelMonitoringContent() {
               <div style={{ padding: 40, textAlign: 'center', color: 'var(--cd-text-muted)', fontSize: 13 }}>
                 <Fuel size={28} color="var(--cd-border)" style={{ margin: '0 auto 12px' }} />
                 <div style={{ fontWeight: 600, marginBottom: 4 }}>No assets in this quarry</div>
-                <div style={{ fontSize: 12 }}>Fuel probe data will appear when vehicles are assigned to this zone in MiX.</div>
+                <div style={{ fontSize: 12 }}>Fuel probe data will appear when vehicles are assigned to this zone.</div>
               </div>
             ) : (
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>

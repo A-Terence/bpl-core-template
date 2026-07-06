@@ -36,6 +36,6 @@ Summary widgets mirror the sidebar — KPI row, map, fuel, alerts, drivers, stat
 
 ## Next steps
 
-- Port telematics poller + live map from a client dashboard
-- Wire AI assistant and routing/traffic environment service
-- Add Clerk auth
+- Connect live fleet data feed and map views
+- Wire AI assistant and routing/traffic services
+- Add user authentication

@@ -1018,7 +1018,7 @@ button { font-family: inherit; }
 .bpl-kpi-delta-up { color: #16a34a; font-weight: 600; }
 .bpl-kpi-delta-down { color: var(--bpl-red); font-weight: 600; }
 
-/* ── Home dashboard (MiX reference layout) ───────────────── */
+/* ── Home dashboard layout ───────────────── */
 .bpl-home-grid {
   display: grid;
   gap: 16px;
@@ -2242,7 +2242,7 @@ button { font-family: inherit; }
   font-size: 12px;
 }
 
-/* Lafarge-style fuel period buttons */
+/* Fuel period controls */
 .bpl-fuel-period-row {
   display: flex;
   flex-wrap: wrap;
@@ -2291,7 +2291,7 @@ button { font-family: inherit; }
   font-size: 11px;
 }
 
-/* Fuel page — Lafarge layout */
+/* Fuel page layout */
 .bpl-fuel-page-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -2348,7 +2348,7 @@ button { font-family: inherit; }
   margin-top: 2px;
 }
 
-/* Settings — Lafarge layout */
+/* Settings layout */
 .bpl-settings-section-title {
   font-size: 14px;
   font-weight: 600;
@@ -2494,7 +2494,7 @@ button { font-family: inherit; }
   position: relative;
 }
 
-/* JMG segmented view control */
+/* Segmented view control */
 .cd-view-seg {
   display: inline-flex;
   border: 1px solid var(--cd-border);
@@ -2848,7 +2848,7 @@ button { font-family: inherit; }
   white-space: nowrap;
 }
 
-/* JMG grouped view (compact) */
+/* Grouped view (compact) */
 .gv-scene-compact {
   border-radius: 0;
   padding: 0;

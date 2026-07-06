@@ -93,8 +93,8 @@ export const FEATURE_REGISTRY: FeatureDefinition[] = [
     homeWidget: true,
     teaser: {
       title: 'Safety',
-      summary: 'Fleet-wide safety score, FRSC-aligned thresholds, and coaching recommendations.',
-      bullets: ['Fleet safety score gauge', 'FRSC reference rules', 'Coaching triggers'],
+      summary: 'Fleet-wide safety score, configurable thresholds, and coaching recommendations.',
+      bullets: ['Fleet safety score gauge', 'Industry reference rules', 'Coaching triggers'],
       homeWidget: 'Safety score KPI',
     },
   },
@@ -174,7 +174,7 @@ export const FEATURE_REGISTRY: FeatureDefinition[] = [
     homeWidget: true,
     teaser: {
       title: 'ARIA Intelligence',
-      summary: 'Anthropic-powered fleet advisor — root cause analysis, coaching, and chat.',
+      summary: 'AI fleet advisor — root cause analysis, coaching, and chat.',
       bullets: ['SafeIQ incident analysis', 'ARIA chat assistant', 'Automated insights'],
       homeWidget: 'AI insights panel',
     },
@@ -188,7 +188,7 @@ export const FEATURE_REGISTRY: FeatureDefinition[] = [
     homeWidget: true,
     teaser: {
       title: 'Environment & Traffic',
-      summary: 'TomTom weather and traffic context at incident time for smarter decisions.',
+      summary: 'Weather and traffic context at incident time for smarter decisions.',
       bullets: ['Weather at event location', 'Traffic density', 'Road type inference'],
       homeWidget: 'Weather & traffic strip',
     },
@@ -203,7 +203,7 @@ export const FEATURE_REGISTRY: FeatureDefinition[] = [
     teaser: {
       title: 'Settings',
       summary: 'Platform configuration, API connections, alert thresholds, and roles.',
-      bullets: ['MiX API connections', 'Alert thresholds', 'Roles & permissions'],
+      bullets: ['Integration connections', 'Alert thresholds', 'Roles & permissions'],
     },
   },
 ];

@@ -14,7 +14,7 @@ export default function FleetMapWidget() {
       <div className="bpl-card-body">
         <div className="bpl-map-placeholder">
           <MapPin size={32} style={{ opacity: 0.25, marginBottom: 8 }} />
-          <div>Live map — connect MiX poller to populate</div>
+          <div>Live map — connects when fleet data feed is active</div>
           <div className="bpl-map-legend">
             <span><span style={{ color: '#16a34a' }}>●</span> Moving {metadata.moving}</span>
             <span><span style={{ color: '#0078D4' }}>●</span> Stopped {metadata.parked}</span>

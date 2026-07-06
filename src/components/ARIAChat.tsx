@@ -49,7 +49,7 @@ function demoReply(
   if (q.includes('summar') || q.includes('status') || q.includes('fleet')) {
     return `**Fleet snapshot**\n\n- Total vehicles: **${metadata.totalVehicles}**\n- Moving: **${metadata.moving}** | Parked: **${metadata.parked}** | Idle: **${metadata.idle}**\n- Offline/Inactive: **${metadata.offline + metadata.inactive}**\n- Safety score: **${safetyScore}/100**`;
   }
-  return `Based on current fleet data, I recommend prioritising **panic response**, **maintenance due within 7 days**, and **driver coaching** for scores below 60.\n\nConnect **ANTHROPIC_API_KEY** on the server for live AI analysis when you wire the API layer.`;
+  return `Based on current fleet data, I recommend prioritising **panic response**, **maintenance due within 7 days**, and **driver coaching** for scores below 60.\n\nLive AI analysis is available once the assistant integration is configured on the server.`;
 }
 
 export default function ARIAChat() {

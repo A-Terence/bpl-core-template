@@ -94,7 +94,7 @@ export const SETTINGS_NAV: NavGroupDef = {
   children: [
     { path: '/settings/general', label: 'General', icon: Cog },
     { path: '/settings/thresholds', label: 'Alert Thresholds', icon: SlidersHorizontal },
-    { path: '/settings/api', label: 'API Connections', icon: Plug },
+    { path: '/settings/api', label: 'Integrations', icon: Plug },
     { path: '/settings/roles', label: 'Roles & Permissions', icon: ShieldCheck },
   ],
 };

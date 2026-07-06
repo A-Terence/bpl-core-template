@@ -5,7 +5,7 @@ import type { SafetyNotification, Severity } from '../hooks/useSafeIQ';
 import EnvironmentBadge from './EnvironmentBadge';
 
 const DANGER_PATTERN = /\b(harsh braking|harsh acceleration|overspeeding|overspeed tiered|overspeed|cornering|panic alert|panic|tailgating|following distance|speeding|collision|near.miss|critical|immediate action|intervention required)\b/gi;
-const IMPORTANT_PATTERN = /\b(rain|wet|fog|visibility|slippery|heavy traffic|congestion|peak hour|FMCSA|FRSC|ISO 39001|BASIC|threshold|recurring|pattern|behaviour|behavior|trend|escalat)\b/gi;
+const IMPORTANT_PATTERN = /\b(rain|wet|fog|visibility|slippery|heavy traffic|congestion|peak hour|ISO 39001|threshold|recurring|pattern|behaviour|behavior|trend|escalat)\b/gi;
 
 function HighlightedText({ text }: { text: string }) {
   const combined = new RegExp(

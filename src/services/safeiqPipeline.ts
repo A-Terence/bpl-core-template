@@ -115,7 +115,7 @@ export function buildFallbackAnalysis(
   return {
     severity,
     severity_reason: isPanic
-      ? `Panic activation requires immediate supervisor response per FRSC Emergency Response Protocol.`
+      ? `Panic activation requires immediate supervisor response per fleet emergency protocol.`
       : `${event.label || 'Safety event'} recorded for ${event.driverName || 'driver'} (${stats.incidents} incidents in 30 days).`,
     root_cause: ref.coaching,
     industry_reference: formatReferenceForDisplay(ref),
@@ -175,7 +175,7 @@ export async function analyzeSafetyEvent(
       return { environment, analysis };
     }
   } catch {
-    /* fall through to local FRSC reference */
+    /* fall through to local reference library */
   }
 
   if (ref) {

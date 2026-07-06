@@ -12,7 +12,7 @@ export interface ResolvedEnvironment extends EnvironmentContext {
 function inferRoadType(address = ''): EnvironmentContext['road_type'] {
   const a = address.toLowerCase();
   if (/expressway|highway|motorway|interstate|km\s*\d/i.test(a)) return 'highway';
-  if (/port|gate|apapa|oshodi|ikeja|lagos|urban|street|road\b/i.test(a)) return 'urban';
+  if (/port|gate|depot|urban|street|road\b/i.test(a)) return 'urban';
   if (/rural|village|farm/i.test(a)) return 'rural';
   return 'highway';
 }

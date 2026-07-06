@@ -158,22 +158,19 @@ function ThresholdSettings() {
 }
 
 function APISettings() {
-  const apiKeys: Array<{ name: string; key: string; status: 'connected' | 'not_configured'; desc: string }> = [
-    { name: 'AI Assistant (ARIA + SafeIQ)', key: 'ANTHROPIC_API_KEY', status: 'not_configured' as const, desc: 'Server-side only — fleet analysis and coaching' },
-    { name: 'Telematics API', key: 'VITE_API_SECRET', status: 'not_configured' as const, desc: 'Live vehicle telemetry and event data' },
-    { name: 'Routing & Traffic', key: 'TOMTOM_API_KEY', status: 'not_configured' as const, desc: 'Dispatch routing and traffic context' },
+  const integrations: Array<{ name: string; status: 'connected' | 'not_configured'; desc: string }> = [
+    { name: 'Fleet data feed', status: 'not_configured', desc: 'Live vehicle telemetry, positions, and events' },
+    { name: 'AI assistant', status: 'not_configured', desc: 'Incident analysis, coaching recommendations, and chat' },
+    { name: 'Routing & traffic', status: 'not_configured', desc: 'Dispatch routing and road context at incident time' },
   ];
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-      {apiKeys.map(api => (
+      {integrations.map(api => (
         <div key={api.name} className="bpl-card bpl-api-row">
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 2 }}>{api.name}</div>
             <div style={{ fontSize: 12, color: 'var(--cd-text-muted)' }}>{api.desc}</div>
-            <div style={{ fontSize: 11, color: 'var(--cd-text-muted)', marginTop: 3 }}>
-              Env: <code className="bpl-code">{api.key}</code>
-            </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
             {api.status === 'connected' ? (
@@ -186,7 +183,7 @@ function APISettings() {
       ))}
       <div className="bpl-settings-note">
         <AlertCircle size={13} />
-        API keys are stored as environment variables (.env). Restart after changes.
+        Integration credentials are configured on the server. Contact your administrator to connect live services.
       </div>
     </div>
   );
@@ -220,7 +217,7 @@ function RoleSettings() {
 const TAB_TITLES: Record<Tab, string> = {
   general: 'General',
   thresholds: 'Alert Thresholds',
-  api: 'API Connections',
+  api: 'Integrations',
   roles: 'Roles & Permissions',
 };
 
@@ -240,7 +237,7 @@ export default function Settings() {
         <h1 className="bpl-page-title">Settings — {TAB_TITLES[tab]}</h1>
         <p className="bpl-page-subtitle">
           {advanced
-            ? 'Platform configuration, API connections, and user management'
+            ? 'Platform configuration, integrations, and user management'
             : 'Platform configuration and display preferences'}
         </p>
       </div>

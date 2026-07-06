@@ -359,7 +359,7 @@ function FuelConsumptionContent() {
         Fuel Consumption
       </div>
       <p style={{ fontSize: 13, color: 'var(--cd-text-muted)', marginBottom: 20 }}>
-        Trip fuel is estimated from probe readings at trip start/end. Duration is MiX driving hours (used for L/h).
+        Trip fuel is estimated from probe readings at trip start/end. Duration uses recorded driving hours (for L/h).
       </p>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 20, alignItems: 'center' }}>
