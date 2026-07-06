@@ -18,7 +18,7 @@ Open http://localhost:5173
    - `branding` — name, logo, primary color
    - `features` — `true` / `false` per module
 3. Add logo under `public/tenants/<client>/`
-4. Copy `.env.example` to `.env` and fill in when MiX / API keys are wired
+4. Add a local `.env` for deployment secrets when wiring live data (never committed)
 
 ## Features
 
