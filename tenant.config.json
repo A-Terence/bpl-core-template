@@ -1,0 +1,38 @@
+{
+  "id": "default",
+  "branding": {
+    "clientName": "BPL Fleet Intelligence",
+    "platformName": "Fleet Manager",
+    "tagline": "Real-time overview of your fleet operations",
+    "logo": "/tenants/default/logo.svg",
+    "favicon": "/favicon.svg",
+    "primaryColor": "#0078D4",
+    "dashboardTitle": "Dashboard",
+    "documentTitle": "BPL Fleet Manager"
+  },
+  "user": {
+    "displayName": "Admin User"
+  },
+  "ui": {
+    "showUnavailableFeatures": true,
+    "showAdvancedSettings": true
+  },
+  "features": {
+    "fleet": true,
+    "groupedView": true,
+    "siteFilter": true,
+    "driverDistance": true,
+    "panic": true,
+    "drivers": true,
+    "incidents": true,
+    "safety": true,
+    "fuel": true,
+    "dispatch": true,
+    "operations": true,
+    "maintenance": true,
+    "reports": true,
+    "aria": true,
+    "environment": true,
+    "settings": true
+  }
+}
