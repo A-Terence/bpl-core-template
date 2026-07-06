@@ -65,8 +65,8 @@ export const FEATURE_REGISTRY: FeatureDefinition[] = [
     homeWidget: true,
     teaser: {
       title: 'Driver Management',
-      summary: 'Profiles, safety scores, coaching history, training, and certifications.',
-      bullets: ['Driver risk rankings', 'Coaching workflows', 'Certification tracking'],
+      summary: 'Profiles, safety scores, coaching, training, certifications, and HOS fatigue monitoring.',
+      bullets: ['Driver risk rankings', 'Coaching workflows', 'Fatigue & hours-of-service'],
       homeWidget: 'Driver performance',
     },
   },

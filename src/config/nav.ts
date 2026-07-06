@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 import {
-  LayoutDashboard, Users, User, GraduationCap, Award, BadgeCheck,
+  LayoutDashboard, Users, User, GraduationCap, Award, BadgeCheck, Moon,
   AlertTriangle, Search, ListChecks,
   Shield, Wrench, FileBarChart2, Folder, Truck, Percent, Clock, DollarSign, Fuel, Navigation, Route, Map, Brain, BarChart3,
   Settings, Cog, SlidersHorizontal, Plug, ShieldCheck,
@@ -34,6 +34,7 @@ export const SIDEBAR_NAV: NavGroupDef[] = [
     children: [
       { path: '/drivers', label: 'Drivers', icon: User },
       { path: '/drivers/coaching', label: 'Coaching', icon: GraduationCap },
+      { path: '/drivers/fatigue', label: 'Fatigue Management', icon: Moon },
       { path: '/drivers/training', label: 'Training', icon: Award },
       { path: '/drivers/certifications', label: 'Certifications', icon: BadgeCheck },
     ],

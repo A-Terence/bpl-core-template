@@ -12,6 +12,7 @@ import DispatchPage from './pages/DispatchPage';
 import TripsPage from './pages/TripsPage';
 import ReportsPage from './pages/ReportsPage';
 import AiInsightsPage from './pages/AiInsightsPage';
+import FatigueManagementPage from './pages/FatigueManagementPage';
 import ModulePage from './pages/ModulePage';
 import Settings from './pages/Settings';
 import { SIDEBAR_NAV } from './config/nav';
@@ -20,6 +21,8 @@ import type { FeatureId } from './config/features';
 const MODULE_IDS = new Set<FeatureId>([
   'drivers', 'incidents', 'safety', 'maintenance', 'reports', 'operations',
 ]);
+
+const DEDICATED_MODULE_PATHS = new Set(['/drivers/fatigue']);
 
 function moduleRoutes() {
   const routes: { path: string; featureId: FeatureId; subLabel?: string }[] = [];
@@ -36,6 +39,7 @@ function moduleRoutes() {
       routes.push({ path: group.path, featureId: group.featureId });
       for (const child of group.children) {
         if (child.path === group.path) continue;
+        if (DEDICATED_MODULE_PATHS.has(child.path)) continue;
         routes.push({ path: child.path, featureId: group.featureId, subLabel: child.label });
       }
     } else {
@@ -68,6 +72,7 @@ export default function App() {
                 <Route path="/reports/actions" element={<Navigate to="/reports" replace />} />
                 <Route path="/reports" element={<ReportsPage />} />
                 <Route path="/aria" element={<AiInsightsPage />} />
+                <Route path="/drivers/fatigue" element={<FatigueManagementPage />} />
                 {moduleRoutes().map(r => (
                   <Route
                     key={r.path}

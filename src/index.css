@@ -3598,6 +3598,95 @@ button { font-family: inherit; }
   gap: 8px;
 }
 
+.bpl-fatigue-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.bpl-fatigue-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 320px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--cd-border);
+  background: var(--cd-surface);
+  color: var(--cd-text-muted);
+}
+
+.bpl-fatigue-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 9px 0;
+  font-size: 13px;
+  color: var(--cd-text);
+  outline: none;
+}
+
+.bpl-fatigue-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bpl-fatigue-filter-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--cd-border);
+  background: var(--cd-surface);
+  color: var(--cd-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bpl-fatigue-filter-btn:hover {
+  background: var(--cd-surface-2);
+  color: var(--cd-text);
+}
+
+.bpl-fatigue-filter-btn.active {
+  border-color: #0078D4;
+  background: rgba(0, 120, 212, 0.1);
+  color: #0078D4;
+}
+
+.bpl-fatigue-table td {
+  vertical-align: middle;
+}
+
+.bpl-fatigue-meter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+  font-size: 11px;
+  color: var(--cd-text-muted);
+}
+
+.bpl-fatigue-meter-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--cd-surface-2);
+  overflow: hidden;
+}
+
+.bpl-fatigue-meter-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.2s;
+}
+
 .bpl-dispatch-vehicles {
   display: flex;
   flex-direction: column;

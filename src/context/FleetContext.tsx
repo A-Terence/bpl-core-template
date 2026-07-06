@@ -121,6 +121,23 @@ export interface TripItem {
   eta: string;
 }
 
+export type HosStatus = 'compliant' | 'warning' | 'violation';
+
+export interface HosRecord {
+  id: string;
+  driverName: string;
+  vehicleReg: string;
+  site: string;
+  driveMinutesToday: number;
+  dutyMinutesToday: number;
+  driveLimitMinutes: number;
+  dutyLimitMinutes: number;
+  restMinutesRemaining: number;
+  status: HosStatus;
+  restDueAt: string | null;
+  lastUpdated: string;
+}
+
 const now = Date.now();
 
 function demoFuelLevel(regNo: string) {
@@ -253,6 +270,16 @@ const DEMO_TRIPS: TripItem[] = [
   { id: '4', vehicle: 'FLT-0055', driver: 'Taylor Reed', route: 'Hub → North Quarry', timing: 'Completed', status: 'Completed', progress: 100, eta: '12:00' },
 ];
 
+const DEMO_HOS: HosRecord[] = [
+  { id: '1', driverName: 'Alex Morgan', vehicleReg: 'FLT-0042', site: 'North Quarry', driveMinutesToday: 312, dutyMinutesToday: 410, driveLimitMinutes: 540, dutyLimitMinutes: 720, restMinutesRemaining: 38, status: 'warning', restDueAt: new Date(Date.now() + 38 * 60_000).toISOString(), lastUpdated: new Date().toISOString() },
+  { id: '2', driverName: 'Jordan Lee', vehicleReg: 'FLT-0017', site: 'West Depot', driveMinutesToday: 186, dutyMinutesToday: 240, driveLimitMinutes: 540, dutyLimitMinutes: 720, restMinutesRemaining: 195, status: 'compliant', restDueAt: new Date(Date.now() + 195 * 60_000).toISOString(), lastUpdated: new Date().toISOString() },
+  { id: '3', driverName: 'Sam Rivera', vehicleReg: 'FLT-0033', site: 'North Quarry', driveMinutesToday: 498, dutyMinutesToday: 615, driveLimitMinutes: 540, dutyLimitMinutes: 720, restMinutesRemaining: 0, status: 'violation', restDueAt: null, lastUpdated: new Date().toISOString() },
+  { id: '4', driverName: 'Casey Brooks', vehicleReg: 'FLT-0081', site: 'South Plant', driveMinutesToday: 94, dutyMinutesToday: 120, driveLimitMinutes: 540, dutyLimitMinutes: 720, restMinutesRemaining: 360, status: 'compliant', restDueAt: new Date(Date.now() + 360 * 60_000).toISOString(), lastUpdated: new Date().toISOString() },
+  { id: '5', driverName: 'Taylor Reed', vehicleReg: 'FLT-0055', site: 'West Depot', driveMinutesToday: 268, dutyMinutesToday: 355, driveLimitMinutes: 540, dutyLimitMinutes: 720, restMinutesRemaining: 72, status: 'warning', restDueAt: new Date(Date.now() + 72 * 60_000).toISOString(), lastUpdated: new Date().toISOString() },
+  { id: '6', driverName: 'Riley Chen', vehicleReg: 'FLT-0067', site: 'North Quarry', driveMinutesToday: 142, dutyMinutesToday: 188, driveLimitMinutes: 540, dutyLimitMinutes: 720, restMinutesRemaining: 280, status: 'compliant', restDueAt: new Date(Date.now() + 280 * 60_000).toISOString(), lastUpdated: new Date().toISOString() },
+  { id: '7', driverName: 'Jamie Park', vehicleReg: 'FLT-0092', site: 'West Depot', driveMinutesToday: 521, dutyMinutesToday: 680, driveLimitMinutes: 540, dutyLimitMinutes: 720, restMinutesRemaining: 0, status: 'violation', restDueAt: null, lastUpdated: new Date().toISOString() },
+];
+
 export type DataSource = 'demo' | 'live';
 
 interface FleetContextValue {
@@ -266,6 +293,7 @@ interface FleetContextValue {
   fuelSeries: FuelDay[];
   insights: AiInsight[];
   trips: TripItem[];
+  hosRecords: HosRecord[];
   safetyScore: number;
   safetyDelta: number;
   redAlertCount: number;
@@ -392,6 +420,7 @@ export function FleetProvider({ children }: { children: ReactNode }) {
     fuelSeries: DEMO_FUEL,
     insights: DEMO_INSIGHTS,
     trips: DEMO_TRIPS,
+    hosRecords: DEMO_HOS,
     safetyScore,
     safetyDelta,
     redAlertCount: metadata.panic,

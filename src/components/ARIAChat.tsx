@@ -13,6 +13,7 @@ const PAGE_LABELS: Record<string, string> = {
   '/': 'Dashboard',
   '/fleet': 'Live Fleet',
   '/drivers': 'Drivers',
+  '/drivers/fatigue': 'Fatigue Management',
   '/incidents': 'Incidents',
   '/safety': 'Safety',
   '/fuel': 'Fuel',
